@@ -20,13 +20,13 @@ $ gem install bollettino-cli
 ## Usage
 
 ```console
-$ bollettino-cli generate [OPTIONS] [OUTPUT_PATH]
+$ bollettino-cli generate --payee-account=[PAYEE_ACCOUNT] --payee-name=[PAYEE_NAME] --payer-name=[PAYER_NAME] --payer-street=[PAYER_STREET] --payer-zip=[PAYER_ZIP] --payer-location=[PAYER_LOCATION] --order-numamount=[ORDER_NUMAMOUNT] --order-textamount=[ORDER_TEXTAMOUNT] --order-reason=[ORDER_REASON] [OUTPUT_PATH]
 ```
 
 Or, to generate slips from a CSV file:
 
 ```console
-$ bollettino-cli csv-generate [OPTIONS] [OUTPUT_PATH]
+$ bollettino-cli csv-generate --source=[CSV_PATH] [OUTPUT_DIR]
 ```
 
 For the documentation run:
