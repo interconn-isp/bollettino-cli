@@ -1,23 +1,31 @@
-# Ensure we require the local version and not one we might have installed already
-require File.join([File.dirname(__FILE__),'lib','bollettino-cli','version.rb'])
-spec = Gem::Specification.new do |s| 
-  s.name = 'bollettino-cli'
-  s.version = BollettinoCli::VERSION
-  s.author = 'Your Name Here'
-  s.email = 'your@email.address.com'
-  s.homepage = 'http://your.website.com'
-  s.platform = Gem::Platform::RUBY
-  s.summary = 'A description of your project'
-  s.files = `git ls-files`.split("
-")
-  s.require_paths << 'lib'
-  s.has_rdoc = true
-  s.extra_rdoc_files = ['README.rdoc','bollettino-cli.rdoc']
-  s.rdoc_options << '--title' << 'bollettino-cli' << '--main' << 'README.rdoc' << '-ri'
-  s.bindir = 'bin'
-  s.executables << 'bollettino-cli'
-  s.add_development_dependency('rake')
-  s.add_development_dependency('rdoc')
-  s.add_development_dependency('aruba')
-  s.add_runtime_dependency('gli','2.12.2')
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'bollettino/cli'
+
+Gem::Specification.new do |spec|
+  spec.name          = 'bollettino-cli'
+  spec.version       = Bollettino::CLI::VERSION
+  spec.authors       = ['Alessandro Desantis']
+  spec.email         = ['desa.alessandro@gmail.com']
+  spec.summary       = 'A CLI for the Bollettino gem.'
+  spec.description   = 'A CLI for the Bollettino gem.'
+  spec.homepage      = 'https://github.com/interconn-isp/bollettino-cli'
+  spec.license       = 'MIT'
+
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ['lib']
+
+  spec.bindir        = 'bin'
+  spec.executables   << 'bollettino-cli'
+
+  spec.add_development_dependency 'bundler', '~> 1.7'
+  spec.add_development_dependency 'rake', '~> 10.3'
+  spec.add_development_dependency 'rspec', '~> 3.1'
+  spec.add_development_dependency 'mocha', '~> 1.1'
+
+  spec.add_runtime_dependency 'bollettino', '~> 0.1'
+  spec.add_runtime_dependency 'gli', '~> 2.12'
 end

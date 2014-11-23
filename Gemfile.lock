@@ -1,0 +1,58 @@
+PATH
+  remote: .
+  specs:
+    bollettino-cli (0.1.0)
+      bollettino (~> 0.1)
+      gli (~> 2.12)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
+    bollettino (0.1.0)
+      mini_magick (~> 4.0)
+      virtus (~> 1.0)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
+    diff-lcs (1.2.5)
+    equalizer (0.0.9)
+    gli (2.12.2)
+    ice_nine (0.11.0)
+    metaclass (0.0.4)
+    mini_magick (4.0.0)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
+    rake (10.3.2)
+    rspec (3.1.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
+    rspec-core (3.1.7)
+      rspec-support (~> 3.1.0)
+    rspec-expectations (3.1.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.1.0)
+    rspec-mocks (3.1.3)
+      rspec-support (~> 3.1.0)
+    rspec-support (3.1.2)
+    thread_safe (0.3.4)
+    virtus (1.0.3)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bollettino-cli!
+  bundler (~> 1.7)
+  mocha (~> 1.1)
+  rake (~> 10.3)
+  rspec (~> 3.1)

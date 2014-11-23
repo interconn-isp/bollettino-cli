@@ -1,6 +1,0 @@
-= bollettino-cli
-
-Describe your project here
-
-:include:bollettino-cli.rdoc
-
