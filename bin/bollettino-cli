@@ -1,70 +1,77 @@
 #!/usr/bin/env ruby
 require 'gli'
-begin # XXX: Remove this begin/rescue before distributing your app
-require 'bollettino-cli'
-rescue LoadError
-  STDERR.puts "In development, you need to use `bundle exec bin/bollettino-cli` to run your app"
-  STDERR.puts "At install-time, RubyGems will make sure lib, etc. are in the load path"
-  STDERR.puts "Feel free to remove this message from bin/bollettino-cli now"
-  exit 64
-end
+require 'bollettino/cli'
 
 include GLI::App
 
-program_desc 'Describe your application here'
+program_desc 'A CLI for the Bollettino library'
 
-version BollettinoCli::VERSION
+version Bollettino::CLI::VERSION
 
 subcommand_option_handling :normal
 arguments :strict
 
-desc 'Describe some switch here'
-switch [:s,:switch]
-
-desc 'Describe some flag here'
-default_value 'the default'
-arg_name 'The name of the argument'
-flag [:f,:flagname]
-
-desc 'Describe generate here'
-arg_name 'Describe arguments to generate here'
+desc 'Generates a new slip'
+arg_name '[PATH]'
 command :generate do |c|
-  c.desc 'Describe a switch to generate'
-  c.switch :s
+  c.desc "The payee's account number"
+  c.flag 'payee-account', required: true
 
-  c.desc 'Describe a flag to generate'
-  c.default_value 'default'
-  c.flag :f
-  c.action do |global_options,options,args|
+  c.desc "The payee's name"
+  c.flag 'payee-name', required: true
 
-    # Your command logic here
-     
-    # If you have any errors, just raise them
-    # raise "that command made no sense"
+  c.desc "The payer's name"
+  c.flag 'payer-name', required: true
 
-    puts "generate command ran"
+  c.desc "The payer's address' street"
+  c.flag 'payer-street', required: true
+
+  c.desc "The payer's address' ZIP"
+  c.flag 'payer-zip', required: true
+
+  c.desc "The payer's address' location"
+  c.flag 'payer-location', required: true
+
+  c.desc "The payment order's numeric amount"
+  c.flag 'order-numamount', required: true
+
+  c.desc "The payment order's text amount"
+  c.flag 'order-textamount', required: true
+
+  c.desc "The payment order's reason"
+  c.flag 'order-reason', required: true
+
+  c.action do |global_options, options, args|
+    raise 'You must specify a path for the slip!' if args.length < 1
+
+    payee = Bollettino::Payee.new(
+      account_number: options['payee-account'],
+      name: options['payee-name']
+    )
+
+    payer = Bollettino::Payer.new(
+      name: options['payer-name'],
+      address: Bollettino::Address.new(
+        street: options['payer-street'],
+        zip: options['payer-zip'],
+        location: options['payer-location']
+      )
+    )
+
+    payment_order = Bollettino::PaymentOrder.new(
+      numeric_amount: options['order-numamount'],
+      text_amount:  options['order-textamount'],
+      reason:  options['order-reason']
+    )
+
+    slip = Bollettino::Slip.new(
+      payee: payee,
+      payer: payer,
+      payment_order: payment_order
+    )
+
+    Bollettino::Generator.new.generate!(slip, args[0])
   end
-end
-
-pre do |global,command,options,args|
-  # Pre logic here
-  # Return true to proceed; false to abort and not call the
-  # chosen command
-  # Use skips_pre before a command to skip this block
-  # on that command only
-  true
-end
-
-post do |global,command,options,args|
-  # Post logic here
-  # Use skips_post before a command to skip this
-  # block on that command only
-end
-
-on_error do |exception|
-  # Error logic here
-  # return false to skip default error handling
-  true
 end
 
 exit run(ARGV)
