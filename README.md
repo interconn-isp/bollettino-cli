@@ -1,5 +1,9 @@
 # bollettino-cli
 
+[![Build Status](https://travis-ci.org/interconn-isp/bollettino-cli.svg?branch=master)](https://travis-ci.org/interconn-isp/bollettino-cli)
+[![Dependency Status](https://gemnasium.com/interconn-isp/bollettino-cli.svg)](https://gemnasium.com/interconn-isp/bollettino-cli)
+[![Code Climate](https://codeclimate.com/github/interconn-isp/bollettino-cli/badges/gpa.svg)](https://codeclimate.com/github/interconn-isp/bollettino-cli)
+
 bollettino-cli is a command line interface for [Bollettino](https://github.com/interconn-isp/bollettino-cli).
 
 It supports generation of postal payment slips from the command line as well as
