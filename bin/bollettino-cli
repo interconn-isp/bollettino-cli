@@ -74,4 +74,51 @@ command :generate do |c|
   end
 end
 
+desc 'Generates slips from a CSV file'
+arg_name '[DIR]'
+command 'csv-generate' do |c|
+  c.desc "The CSV file's PATH"
+  c.flag 'source', required: true
+
+  c.action do |global_options, options, args|
+    raise 'You must specify a directory for the slips!' if args.length < 1
+
+    generator = Bollettino::Generator.new
+
+    CSV.foreach(options[:source], headers: true).each_with_index do |line, index|
+      %w(payee-account payee-name payer-name payer-street payer-zip payer-location order-numamount order-textamount order-reason).each do |header|
+        raise "#{header} header is required on line #{index + 1}" unless line.has_key?(header)
+      end
+
+      payee = Bollettino::Payee.new(
+        account_number: line['payee-account'],
+        name: line['payee-name']
+      )
+
+      payer = Bollettino::Payer.new(
+        name: line['payer-name'],
+        address: Bollettino::Address.new(
+          street: line['payer-street'],
+          zip: line['payer-zip'],
+          location: line['payer-location']
+        )
+      )
+
+      payment_order = Bollettino::PaymentOrder.new(
+        numeric_amount: line['order-numamount'],
+        text_amount:  line['order-textamount'],
+        reason:  line['order-reason']
+      )
+
+      slip = Bollettino::Slip.new(
+        payee: payee,
+        payer: payer,
+        payment_order: payment_order
+      )
+
+      generator.generate!(slip, "#{args[0]}/#{index + 1}.png")
+    end
+  end
+end
+
 exit run(ARGV)

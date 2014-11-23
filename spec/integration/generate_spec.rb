@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe 'The CLI binary' do
+RSpec.describe 'The generate command' do
   let(:options) do
     options = ''
 

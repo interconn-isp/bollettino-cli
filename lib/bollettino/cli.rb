@@ -1,4 +1,5 @@
 require 'bollettino'
+require 'csv'
 
 require 'bollettino/cli/version'
 
