@@ -77,7 +77,7 @@ end
 desc 'Generates slips from a CSV file'
 arg_name '[DIR]'
 command 'csv-generate' do |c|
-  c.desc "The CSV file's PATH"
+  c.desc "The CSV file's path"
   c.flag 'source', required: true
 
   c.action do |global_options, options, args|
