@@ -1,0 +1,5 @@
+= bollettino-cli
+
+Generate this with
+    bollettino-cli rdoc
+After you have described your command line interface
