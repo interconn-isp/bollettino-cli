@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Alessandro Desantis']
   spec.email         = ['desa.alessandro@gmail.com']
   spec.summary       = 'A CLI for the Bollettino library.'
-  spec.description   = 'A CLI for the Bollettino library.'
+  spec.description   = 'bollettino-cli is a CLI for the Bollettino library. It supports generation from CSV files as well.'
   spec.homepage      = 'https://github.com/interconn-isp/bollettino-cli'
   spec.license       = 'MIT'
 
