@@ -33,6 +33,9 @@ Or, to generate slips from a CSV file:
 $ bollettino-cli csv-generate --source=[CSV_PATH] [OUTPUT_DIR]
 ```
 
+For CSVs, the columns' order is not important, but the headers must match the
+options of the `generate` command.
+
 For the documentation run:
 
 ```console
