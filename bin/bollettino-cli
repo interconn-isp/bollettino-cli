@@ -87,7 +87,7 @@ command 'csv-generate' do |c|
 
     CSV.new(open(options[:source]), headers: :first_row).each_with_index do |line, index|
       %w(payee-account payee-name payer-name payer-street payer-zip payer-location order-numamount order-textamount order-reason).each do |header|
-        raise "#{header} header is required on line #{index + 1}" unless line.has_key?(header)
+        raise "#{header} header is required on line #{index + 1}" unless line.header?(header)
       end
 
       payee = Bollettino::Payee.new(
