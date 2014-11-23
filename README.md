@@ -20,6 +20,8 @@ $ gem install bollettino-cli
 
 ## Usage
 
+Run the following command to generate a slip:
+
 ```console
 $ bollettino-cli generate --payee-account=[PAYEE_ACCOUNT] --payee-name=[PAYEE_NAME] \
   --payer-name=[PAYER_NAME] --payer-street=[PAYER_STREET] --payer-zip=[PAYER_ZIP] \
@@ -27,20 +29,22 @@ $ bollettino-cli generate --payee-account=[PAYEE_ACCOUNT] --payee-name=[PAYEE_NA
   --order-textamount=[ORDER_TEXTAMOUNT] --order-reason=[ORDER_REASON] [OUTPUT_PATH]
 ```
 
-Or, to generate slips from a CSV file:
-
-```console
-$ bollettino-cli csv-generate --source=[CSV_PATH] [OUTPUT_DIR]
-```
-
-For CSVs, the columns' order is not important, but the headers must match the
-options of the `generate` command.
-
 For the documentation run:
 
 ```console
 $ bollettino-cli help
 ```
+
+### Generating from CSV
+
+To generate slips from a CSV file run:
+
+```console
+$ bollettino-cli csv-generate --source=[CSV_PATH] [OUTPUT_DIR]
+```
+
+The columns' order is not important, but the headers must match the options of
+the `generate` command.
 
 ## Contributing
 
