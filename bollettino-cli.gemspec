@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Bollettino::CLI::VERSION
   spec.authors       = ['Alessandro Desantis']
   spec.email         = ['desa.alessandro@gmail.com']
-  spec.summary       = 'A CLI for the Bollettino gem.'
-  spec.description   = 'A CLI for the Bollettino gem.'
+  spec.summary       = 'A CLI for the Bollettino library.'
+  spec.description   = 'A CLI for the Bollettino library.'
   spec.homepage      = 'https://github.com/interconn-isp/bollettino-cli'
   spec.license       = 'MIT'
 
