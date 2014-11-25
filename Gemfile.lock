@@ -23,10 +23,7 @@ GEM
     equalizer (0.0.9)
     gli (2.12.2)
     ice_nine (0.11.0)
-    metaclass (0.0.4)
     mini_magick (4.0.0)
-    mocha (1.1.0)
-      metaclass (~> 0.0.1)
     rake (10.3.2)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
@@ -53,6 +50,5 @@ PLATFORMS
 DEPENDENCIES
   bollettino-cli!
   bundler (~> 1.7)
-  mocha (~> 1.1)
   rake (~> 10.3)
   rspec (~> 3.1)
