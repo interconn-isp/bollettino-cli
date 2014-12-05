@@ -25,6 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.3'
   spec.add_development_dependency 'rspec', '~> 3.1'
 
-  spec.add_runtime_dependency 'bollettino', '~> 0.1'
+  spec.add_runtime_dependency 'bollettino', '~> 1.0'
   spec.add_runtime_dependency 'gli', '~> 2.12'
 end
