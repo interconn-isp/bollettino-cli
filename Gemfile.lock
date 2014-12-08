@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bollettino-cli (0.1.0)
+    bollettino-cli (1.0.0)
       bollettino (~> 1.0)
       gli (~> 2.12)
 
