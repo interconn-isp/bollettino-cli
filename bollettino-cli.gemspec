@@ -21,10 +21,10 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'bin'
   spec.executables   << 'bollettino-cli'
 
-  spec.add_development_dependency 'bundler', '~> 1.7'
-  spec.add_development_dependency 'rake', '~> 10.3'
-  spec.add_development_dependency 'rspec', '~> 3.1'
+  spec.add_development_dependency 'bundler', '~> 1.12.5'
+  spec.add_development_dependency 'rake', '~> 11.2.2'
+  spec.add_development_dependency 'rspec', '~> 3.5.0'
 
-  spec.add_runtime_dependency 'bollettino', '~> 1.0'
-  spec.add_runtime_dependency 'gli', '~> 2.12'
+  spec.add_runtime_dependency 'bollettino', '~> 1.0.0'
+  spec.add_runtime_dependency 'gli', '~> 2.14.0'
 end
