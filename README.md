@@ -1,9 +1,9 @@
 # bollettino-cli
 
-[![Gem Version](https://badge.fury.io/rb/bollettino-cli.svg)](http://badge.fury.io/rb/bollettino-cli)
-[![Build Status](https://travis-ci.org/interconn-isp/bollettino-cli.svg?branch=master)](https://travis-ci.org/interconn-isp/bollettino-cli)
-[![Dependency Status](https://gemnasium.com/interconn-isp/bollettino-cli.svg)](https://gemnasium.com/interconn-isp/bollettino-cli)
-[![Code Climate](https://codeclimate.com/github/interconn-isp/bollettino-cli/badges/gpa.svg)](https://codeclimate.com/github/interconn-isp/bollettino-cli)
+[![Gem Version](https://img.shields.io/gem/v/bollettino-cli.svg?maxAge=3600&style=flat-square)](https://rubygems.org/gems/bollettino-cli)
+[![Build Status](https://img.shields.io/travis/interconn-isp/bollettino-cli.svg?maxAge=3600&style=flat-square)](https://travis-ci.org/interconn-isp/bollettino-cli)
+[![Dependency Status](https://img.shields.io/gemnasium/interconn-isp/bollettino-cli.svg?maxAge=3600&style=flat-square)](https://gemnasium.com/github.com/interconn-isp/bollettino-cli)
+[![Code Climate](https://img.shields.io/codeclimate/github/interconn-isp/bollettino-cli.svg?maxAge=3600&style=flat-square)](https://codeclimate.com/github/interconn-isp/bollettino-cli)
 
 bollettino-cli is a command line interface for [Bollettino](https://github.com/interconn-isp/bollettino-cli).
 
